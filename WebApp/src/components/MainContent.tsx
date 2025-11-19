@@ -14,10 +14,14 @@ const MainContent: React.FC<MainContentProps> = ({ children }) => {
     <div
       className={`
         h-screen transition-all duration-300 ease-in-out relative
-        ${isCollapsed ? "ml-16" : "ml-64"}
+        /* Default margin for mobile (always shows collapsed bar underneath or doesn't push content) */
+        ml-16 
+        /* Desktop margin adjustments based on sidebar state */
+        ${isCollapsed ? "md:ml-16" : "md:ml-64"}
       `}
       style={{
-        width: `calc(100vw - ${isCollapsed ? "4rem" : "16rem"})`,
+        // Removed explicit width calculation to allow CSS/Tailwind to handle responsiveness naturally
+        // width: `calc(100vw - ${isCollapsed ? "4rem" : "16rem"})`, 
       }}
     >
       {children}

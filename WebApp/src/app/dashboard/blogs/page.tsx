@@ -8,9 +8,9 @@ import { useEffect, useState } from "react";
 import type { BlogPost } from "@/types/blog";
 import "../../globals.css"; // Ensure global styles are imported
 import localFont from "next/font/local";
+import { ClashDisplay } from "../../fonts";
 const ClashDisplay = localFont({
-  src: "../../../fonts/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Variable.woff2",
-});
+src: "../../../fonts/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Variable.woff2",});
 
 export default function BlogsPage() {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);

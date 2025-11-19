@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -25,9 +25,11 @@ import { requireAuth } from "@/lib/firebase";
 import { useEffect, useState } from "react";
 import { useLiveAPIContext } from "@/contexts/LiveAPIContext";
 import Progress from "@/components/avatar/progress/progress";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google"; // Unused
 
 import localFont from "next/font/local";
+
+// FIX: Adjusted path to go up 2 levels (../../) to find the fonts folder from dashboard
 const ClashDisplay = localFont({
   src: "../../fonts/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Variable.woff2",
 });
@@ -70,14 +72,11 @@ const DualChatbotElement = () => {
       className="relative h-full w-full bg-[#00ce8d]"
       style={{
         background: "linear-gradient(135deg, #00ce8d 0%, #00a1e4 100%)",
-        // background:
-        //   "linear-gradient(135deg, hsla(178, 100%, 50%, 1) 0%, hsla(302, 100%, 50%, 1) 100%)",
-        // background:
-        //   "linear-gradient(90deg, hsla(285, 42%, 33%, 1) 0%, hsla(333, 54%, 51%, 1) 100%)",
       }}
     >
+      {/* RESPONSIVE FIX: Added text-[60px] for mobile and md:text-[120px] for desktop */}
       <div
-        className={`banner-text fixed z-[0] w-[100vh] h-auto top-1/2 transform -translate-y-1/2 right-0 text-[120px] font-[900] text-[#ffffff] text-center opacity-10 origin-center -rotate-90 translate-x-[calc(50%-0.5em)] select-none ${ClashDisplay.className}`}
+        className={`banner-text fixed z-[0] w-[100vh] h-auto top-1/2 transform -translate-y-1/2 right-0 text-[60px] md:text-[120px] font-[900] text-[#ffffff] text-center opacity-10 origin-center -rotate-90 translate-x-[calc(50%-0.5em)] select-none ${ClashDisplay.className}`}
       >
         Alexi
       </div>
@@ -98,18 +97,21 @@ const DualChatbotElement = () => {
       >
         <AIChatInterface InteractiveMode={InteractiveMode}></AIChatInterface>
       </main>
-      <div className="absolute top-0 right-5  z-50 flex items-center gap-2 justify-center p-5 rounded-lg">
-        <div className="text-zinc-700">Chat</div>
+      
+      {/* RESPONSIVE FIX: Adjusted font sizes for the toggle switch labels */}
+      <div className="absolute top-0 right-5 z-50 flex items-center gap-2 justify-center p-5 rounded-lg">
+        <div className="text-zinc-700 text-sm md:text-base">Chat</div>
         <Switch
           checked={InteractiveMode}
           onCheckedChange={() => {
             setInteractiveMode(!InteractiveMode);
           }}
         ></Switch>
-        <div className="text-zinc-700">Talk</div>
+        <div className="text-zinc-700 text-sm md:text-base">Talk</div>
       </div>
+
       <div
-        className={`absolute   z-10 bg-white/20 p-5  text-white transition-all duration-300 ease-in-out ${
+        className={`absolute z-10 bg-white/20 p-5 text-white transition-all duration-300 ease-in-out ${
           InteractiveMode
             ? "hidden md:block left-auto right-2 bottom-2 rounded-xl"
             : "hidden"
