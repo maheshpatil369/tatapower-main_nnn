@@ -1,0 +1,52 @@
+{
+  "questions": [
+    {
+      "question": "Hello! How are you feeling today?",
+      "expected_answer": "Worker's general wellbeing (Good/Okay/Not Well)"
+    },
+    {
+      "question": "Did you have your breakfast today?",
+      "expected_answer": "Breakfast Status: [Yes/No]"
+    },
+    {
+      "question": "What time did you sleep last night and when did you wake up today?",
+      "expected_answer": "Sleep Duration & Timing: [User's Description]"
+    },
+    {
+      "question": "Do you feel anything different today physically or mentally?",
+      "expected_answer": "Physical/Mental Condition: [Normal/Unwell/Tired/Stressed]"
+    },
+    {
+      "question": "Where are you going to work today?",
+      "expected_answer": "Work Location: [Site Area/Zone]"
+    },
+    {
+      "question": "Have you worked at this allotted site location previously?",
+      "expected_answer": "Prior Experience at Site: [Yes/No]"
+    },
+    {
+      "question": "Do you have your helmet, gloves, safety shoes, and other protective equipment in proper condition?",
+      "expected_answer": "PPE Status: [All Good/Missing/Needs Replacement]"
+    },
+    {
+      "question": "Is your work area safe and free from hazards today?",
+      "expected_answer": "Worksite Safety Check: [Safe/Unsafe/Hazard Present]"
+    },
+    {
+      "question": "Are you aware of today's work tasks and the safety precautions required?",
+      "expected_answer": "Awareness Level: [Yes/No/Unclear]"
+    },
+    {
+      "question": "Do you feel physically fit and mentally ready to start work?",
+      "expected_answer": "Readiness Status: [Ready/Not Ready]"
+    },
+    {
+      "question": "Do you have access to drinking water nearby?",
+      "expected_answer": "Hydration Availability: [Yes/No]"
+    },
+    {
+      "question": "Thank you for sharing. Remember to stay alert, follow safety rules, and keep hydrated. All the best for today’s work!",
+      "expected_answer": "Acknowledgement from worker"
+    }
+  ]
+}

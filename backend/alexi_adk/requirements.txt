@@ -1,0 +1,9 @@
+firebase_admin
+Flask
+Flask_Cors
+protobuf
+python-dotenv
+# git+pip install git+git+https://github.com/google/adk-python.git@main
+Deprecated
+Flask[async]
+cryptography
